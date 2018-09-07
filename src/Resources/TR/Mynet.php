@@ -121,7 +121,7 @@ class Mynet extends Resources
 
         // stump general response
         $this->response["resource_link"] = $slug;
-        $this->response["date"]          = today();
+        $this->response["date"]          = $this->date;
         $this->response["language"]      = self::LANGUAGE;
 
         return $slug;

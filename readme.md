@@ -1,27 +1,25 @@
-# Laravel 5.5 için Astrology & Zodiac
+# Astrology Scraper for Laravel ( 5.6  => )
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
+This library provides access to the astrology and horoscope API through its web sites. It offers unlimited and unlimited usage by pulling data from completely free sources.## Install
 
-## Kurulum
-
-Composer kullanarak kurulum.
+Via composer
 
 ``` bash
 $ composer require ismailcaakir/astrology
 ```
 
-## Örnek Kullanımlar
+## Examples
 
-Eklenecek...
+waiting...
 
 
-## Versiyon Değişimleri
+## Change Log
 
-Versiyonlar arasındaki değişimler için [changelog](changelog.md) dosyasına göz atabilirsiniz.
+ou can see the changes from here [changelog](changelog.md)
 
 ## Test
 
@@ -29,22 +27,18 @@ Versiyonlar arasındaki değişimler için [changelog](changelog.md) dosyasına 
 $ composer test
 ```
 
-## Katkı
-
-Bu repoya katkı sağlamak istiyorsanız [contributing.md](contributing.md) sayfasına göz atmanız gerekebilir.
-
 ## Güvenlik
 
-Eğer repoda bir güvenlik sorunu gördüyseniz. Repoya issue açmak yerine ismailcakirnet@gmail.com adresine mail atabilirsiniz.
+If you have seen a security problem with the in repostory. Instead of opening a repostory issue, you can email ismailcakirnet@gmail.com.
 
-## Katkı Verenler
+## Contributors
 
 - [ismailcaakir][link-author]
-- [Katkı Verenler Listesi][link-contributors]
+- [Contributors List][link-contributors]
 
 ## Lisans
 
-Lisans hakkında bilgi almak için [license file](license.md) sayfasına bakabilirsiniz.
+You can look here to read the license information. [license file](license.md) 
 
 [ico-version]: https://img.shields.io/packagist/v/ismailcaakir/astrology.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/ismailcaakir/astrology.svg?style=flat-square
