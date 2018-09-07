@@ -21,7 +21,7 @@ class Functions
      * @param string $format
      * @return bool
      */
-    public function validateDate($date, $format = 'Y-m-d H:i:s')
+    public function validateDate($date, $format = 'Y/m/d')
     {
         $d = DateTime::createFromFormat($format, $date);
 

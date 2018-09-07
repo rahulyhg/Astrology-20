@@ -46,5 +46,22 @@ class Resources
         $this->helper   = new Functions();
     }
 
+    /**
+     * @param array $invalidWords
+     * @param string $nodeValue
+     * @return bool
+     */
+    public function deleteAllLineIfInvalidWords($invalidWords = [], $nodeValue = "")
+    {
+        foreach ($invalidWords as $word)
+        {
+            if (str_contains($nodeValue, $word))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
 }

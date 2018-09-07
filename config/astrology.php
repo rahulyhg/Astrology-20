@@ -8,7 +8,7 @@ return [
     "resources" => [
 
         "TR" => [
-            "resource_1" => ["model" => "BurcunNet", "url" => "http://burcun.net"],
+            "resource_1" => ["model" => "Mynet", "url" => "https://www.mynet.com/kadin/burclar-astroloji/"],
             "resource_2" => ["model" => "BurcunNet", "url" => "http://burcun.net"],
         ]
 
