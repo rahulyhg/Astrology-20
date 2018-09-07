@@ -1,4 +1,4 @@
-# Astrology
+# Laravel 5.5 için Astrology & Zodiac
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -15,6 +15,9 @@ $ composer require ismailcaakir/astrology
 ```
 
 ## Örnek Kullanımlar
+
+Eklenecek...
+
 
 ## Versiyon Değişimleri
 
@@ -34,7 +37,7 @@ Bu repoya katkı sağlamak istiyorsanız [contributing.md](contributing.md) sayf
 
 Eğer repoda bir güvenlik sorunu gördüyseniz. Repoya issue açmak yerine ismailcakirnet@gmail.com adresine mail atabilirsiniz.
 
-## Credits
+## Katkı Verenler
 
 - [ismailcaakir][link-author]
 - [Katkı Verenler Listesi][link-contributors]
@@ -53,4 +56,4 @@ Lisans hakkında bilgi almak için [license file](license.md) sayfasına bakabil
 [link-travis]: https://travis-ci.org/ismailcaakir/astrology
 [link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/ismailcaakir
-[link-contributors]: ../../contributors]
+[link-contributors]: ../../contributors
