@@ -1,12 +1,12 @@
 {
     "name": "ismailcaakir/astrology",
-    "description": ":description",
-    "license": "license",
+    "description": "Laravel için Astroloji paketi",
+    "license": "MIT",
     "authors": [
         {
-            "name": "author name",
-            "email": "author email",
-            "homepage": "author homepage"
+            "name": "ismailcaakir",
+            "email": "ismailcakirnet@gmail.com",
+            "homepage": "https://github.com/ismailcaakir/"
         }
     ],
     "homepage": "https://github.com/ismailcaakir/astrology",
