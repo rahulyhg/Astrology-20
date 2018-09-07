@@ -3,46 +3,45 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
 
 This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
 
-## Installation
+## Kurulum
 
-Via Composer
+Composer kullanarak kurulum.
 
 ``` bash
 $ composer require ismailcaakir/astrology
 ```
 
-## Usage
+## Örnek Kullanımlar
 
-## Change log
+## Versiyon Değişimleri
 
-Please see the [changelog](changelog.md) for more information on what has changed recently.
+Versiyonlar arasındaki değişimler için [changelog](changelog.md) dosyasına göz atabilirsiniz.
 
-## Testing
+## Test
 
 ``` bash
 $ composer test
 ```
 
-## Contributing
+## Katkı
 
-Please see [contributing.md](contributing.md) for details and a todolist.
+Bu repoya katkı sağlamak istiyorsanız [contributing.md](contributing.md) sayfasına göz atmanız gerekebilir.
 
-## Security
+## Güvenlik
 
-If you discover any security related issues, please email author email instead of using the issue tracker.
+Eğer repoda bir güvenlik sorunu gördüyseniz. Repoya issue açmak yerine ismailcakirnet@gmail.com adresine mail atabilirsiniz.
 
 ## Credits
 
-- [author name][link-author]
-- [All Contributors][link-contributors]
+- [ismailcaakir][link-author]
+- [Katkı Verenler Listesi][link-contributors]
 
-## License
+## Lisans
 
-license. Please see the [license file](license.md) for more information.
+Lisans hakkında bilgi almak için [license file](license.md) sayfasına bakabilirsiniz.
 
 [ico-version]: https://img.shields.io/packagist/v/ismailcaakir/astrology.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/ismailcaakir/astrology.svg?style=flat-square
