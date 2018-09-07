@@ -1,0 +1,42 @@
+{
+    "name": "ismailcaakir/astrology",
+    "description": ":description",
+    "license": "license",
+    "authors": [
+        {
+            "name": "author name",
+            "email": "author email",
+            "homepage": "author homepage"
+        }
+    ],
+    "homepage": "https://github.com/ismailcaakir/astrology",
+    "keywords": ["Laravel", "Astrology"],
+    "require": {
+        "illuminate/support": "~5",
+        "fabpot/goutte": "v3.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "orchestra/testbench": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ismailcaakir\\Astrology\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ismailcaakir\\Astrology\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ismailcaakir\\Astrology\\AstrologyServiceProvider"
+            ],
+            "aliases": {
+                "Astrology": "ismailcaakir\\Astrology\\Facades\\Astrology"
+            }
+        }
+    }
+}
