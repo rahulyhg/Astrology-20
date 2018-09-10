@@ -4,7 +4,8 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
 
-This library provides access to the astrology and horoscope API through its web sites. It offers unlimited and unlimited usage by pulling data from completely free sources.## Install
+This library provides access to the astrology and horoscope API through its web sites. It offers unlimited and unlimited usage by pulling data from completely free sources.
+## Install
 
 Via composer
 
