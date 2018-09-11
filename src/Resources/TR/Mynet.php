@@ -53,7 +53,7 @@ class Mynet extends Resources
      * @var array
      */
     public $invalidWords = [
-        "https", "iremSU", "Not", "Mynet", "mynet"
+        "https", "iremSU", "Not", "Mynet", "mynet", "instagram", "twitter", "Twitter", "Instagram", "İnstagram"
     ];
 
     /**
