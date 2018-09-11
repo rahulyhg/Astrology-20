@@ -20,7 +20,7 @@ waiting...
 
 ## Change Log
 
-ou can see the changes from here [changelog](changelog.md)
+You can see the changes from here [changelog](changelog.md)
 
 ## Test
 
