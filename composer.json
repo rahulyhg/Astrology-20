@@ -12,7 +12,9 @@
     "homepage": "https://github.com/ismailcaakir/astrology",
     "keywords": ["PHP", "Astrology", "API"],
     "require": {
-        "fabpot/goutte": "v3.*"
+        "php": "7.*",
+        "fabpot/goutte": "v3.*",
+        "nesbot/carbon": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.0",
@@ -20,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ismailcaakir\\Astrology\\": "src/"
+              "ismailcaakir\\Astrology\\": "src/"
         }
     },
     "autoload-dev": {

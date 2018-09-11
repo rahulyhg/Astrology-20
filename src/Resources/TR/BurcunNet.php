@@ -8,6 +8,7 @@
 
 namespace ismailcaakir\Astrology\Resources\TR;
 
+use Carbon\Carbon;
 use Goutte\Client;
 use ismailcaakir\Astrology\Resources\Resources;
 
@@ -112,7 +113,7 @@ class BurcunNet extends Resources
 
         // stump general response
         $this->response["resource_link"] = $slug;
-        $this->response["date"]          = today();
+        $this->response["date"]          = Carbon::now();
         $this->response["language"]      = self::LANGUAGE;
 
         return $slug;

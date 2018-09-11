@@ -28,7 +28,6 @@ class Functions
         return $d && $d->format($format) == $date;
     }
 
-
     /**
      *
      *
@@ -37,9 +36,9 @@ class Functions
      */
     public function replaceWithStartZero($string)
     {
-        if (starts_with($string,"0"))
+        if (substr($string, 0, 1) === '0')
         {
-            $string = str_replace_first('0','',$string);
+            $string = substr($string,1);
         }
 
         return $string;
@@ -57,4 +56,5 @@ class Functions
 
         return $string;
     }
+
 }

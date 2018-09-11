@@ -2,13 +2,12 @@
 
 namespace ismailcaakir\Astrology;
 
-use Carbon\Carbon;
 use ismailcaakir\Astrology\Exceptions\NotFoundResourceException;
 use ismailcaakir\Astrology\Exceptions\NotSupportedHoroscopeException;
 use ismailcaakir\Astrology\Exceptions\NotSupportedLanguageException;
 use ismailcaakir\Astrology\Exceptions\InvalidDateException;
 use ismailcaakir\Astrology\Helpers\Functions;
-use ismailcaakir\Astrology\Resources\TR\BurcunNet;
+use ismailcaakir\Astrology\Config;
 
 class Astrology
 {
@@ -34,6 +33,7 @@ class Astrology
      */
     public function __construct()
     {
+
         $this->helper = new Functions();
     }
 
@@ -47,17 +47,17 @@ class Astrology
      */
     public function dailyFetch($horoscope = null, $resources = "resource_1", $date = null, $language = "TR")
     {
-        if (!in_array(strtolower($horoscope),config('astrology.supported_horoscopes')))
+        if (!in_array(strtolower($horoscope),Config::getSupportedHoroscopes($language)))
         {
             throw new NotSupportedHoroscopeException('Burca ait bilgiler bulunamadı. Böyle bir burç yok yada desteklenmiyor.');
         }
 
-        if (!array_key_exists($resources,config("astrology.resources.{$language}")))
+        if (!array_key_exists($resources,Config::getSupportedResources($language)))
         {
             throw new NotFoundResourceException('Belirsiz kaynak lütfen geçerli bir kaynak kullanın.');
         }
 
-        if (isset($language) && !in_array(strtoupper($language), config('astrology.supported_languages')))
+        if (isset($language) && !in_array(strtoupper($language), Config::getSupportedLanguages($language)))
         {
             throw new NotSupportedLanguageException("Bu dil desteklenmiyor.");
         }
@@ -67,7 +67,7 @@ class Astrology
             throw new InvalidDateException("Geçersiz tarih formatı.");
         }
 
-        $resource = config("astrology.resources.{$language}.{$resources}");
+        $resource = Config::getSupportedResources($language)[$resources];
 
         $className = self::__RESOURCE_NAMESPACE__."\\".$language."\\".$resource["model"];
 
@@ -81,7 +81,7 @@ class Astrology
     /**
      * @return array
      */
-    public function getResponse(): array
+    public function getResponse()
     {
         return $this->response;
     }

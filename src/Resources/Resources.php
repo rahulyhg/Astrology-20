@@ -55,7 +55,7 @@ class Resources
     {
         foreach ($invalidWords as $word)
         {
-            if (str_contains($nodeValue, $word))
+            if (strpos($nodeValue, $word))
             {
                 return true;
             }
