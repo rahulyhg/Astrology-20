@@ -15,7 +15,7 @@ $ composer require ismailcaakir/astrology
 
 ## Examples
 
-waiting...
+browse wiki page ...
 
 
 ## Change Log
