@@ -9,7 +9,6 @@
 namespace ismailcaakir\Astrology\Resources\TR;
 
 use Carbon\Carbon;
-use Goutte\Client;
 use ismailcaakir\Astrology\Resources\Resources;
 
 class BurcunNet extends Resources
@@ -102,7 +101,7 @@ class BurcunNet extends Resources
 
 
     /**
-     * @return \Illuminate\Config\Repository|mixed
+     * @return object
      */
     private function horoscopeResourceLinkGenerate()
     {

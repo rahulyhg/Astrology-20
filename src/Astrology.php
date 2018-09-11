@@ -7,7 +7,6 @@ use ismailcaakir\Astrology\Exceptions\NotSupportedHoroscopeException;
 use ismailcaakir\Astrology\Exceptions\NotSupportedLanguageException;
 use ismailcaakir\Astrology\Exceptions\InvalidDateException;
 use ismailcaakir\Astrology\Helpers\Functions;
-use ismailcaakir\Astrology\Config;
 
 class Astrology
 {
@@ -79,11 +78,11 @@ class Astrology
     }
 
     /**
-     * @return array
+     * @return object
      */
     public function getResponse()
     {
-        return $this->response;
+        return (object) $this->response;
     }
 
 
