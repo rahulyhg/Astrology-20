@@ -10,7 +10,7 @@
         }
     ],
     "homepage": "https://github.com/ismailcaakir/astrology",
-    "keywords": ["PHP", "Astrology", "API"],
+    "keywords": ["PHP", "Astrology", "API", "Zodiac", "Scraper", "Spider", "Laravel"],
     "require": {
         "php": "7.*",
         "fabpot/goutte": "v3.*",

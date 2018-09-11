@@ -1,4 +1,4 @@
-# Astrology Scraper for Laravel ( 5.6  => )
+# Astrology Scraper for PHP
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
