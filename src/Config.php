@@ -25,6 +25,10 @@ class Config
         ],
 
         "EN" => [
+            "resource_1" => [
+                "model" => "HoroscopeApiCom",
+                "url"   => "http://horoscope-api.herokuapp.com/horoscope/today"
+            ],
 
         ]
     ];

@@ -29,8 +29,6 @@ class Functions
     }
 
     /**
-     *
-     *
      * @param $string
      * @return string
      */
@@ -45,6 +43,7 @@ class Functions
     }
 
     /**
+     * Clear Html
      * @param string $nodeValue
      * @return mixed
      */
@@ -55,6 +54,57 @@ class Functions
         $string = str_replace('\\n', '', $string);
 
         return $string;
+    }
+
+    /**
+     * Convert to turkish - english
+     *
+     * @param $horoscope
+     * @return string
+     */
+    public function horoscopeConverterToEnglish($horoscope)
+    {
+        switch ($horoscope) {
+            case "koc":
+                return "aries";
+            break;
+            case "boga":
+                return "taurus";
+                break;
+            case "gemini":
+                return "aries";
+                break;
+            case "cancer":
+                return "aries";
+                break;
+            case "leo":
+                return "aries";
+                break;
+            case "virgo":
+                return "aries";
+                break;
+            case "libra":
+                return "aries";
+                break;
+            case "scorpio":
+                return "aries";
+                break;
+            case "yay":
+                return "sagittarius";
+                break;
+                case "capricorn":
+                return "aries";
+                break;
+            case "kova":
+                return "aquarius";
+                break;
+            case "balik":
+                return "pisces";
+                break;
+            default:
+                return "virgo";
+                break;
+        }
     }
 
 }
