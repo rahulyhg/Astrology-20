@@ -1,6 +1,6 @@
 {
     "name": "ismailcaakir/astrology",
-    "description": "Laravel için Astroloji paketi",
+    "description": "PHP Astroloji Paketi",
     "license": "MIT",
     "authors": [
         {
@@ -10,9 +10,8 @@
         }
     ],
     "homepage": "https://github.com/ismailcaakir/astrology",
-    "keywords": ["Laravel", "Astrology"],
+    "keywords": ["PHP", "Astrology", "API"],
     "require": {
-        "illuminate/support": "~5",
         "fabpot/goutte": "v3.*"
     },
     "require-dev": {
@@ -30,13 +29,6 @@
         }
     },
     "extra": {
-        "laravel": {
-            "providers": [
-                "ismailcaakir\\Astrology\\AstrologyServiceProvider"
-            ],
-            "aliases": {
-                "Astrology": "ismailcaakir\\Astrology\\Facades\\Astrology"
-            }
-        }
+
     }
 }
