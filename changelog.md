@@ -1,12 +1,9 @@
 # Changelog
 
-All notable changes to `Astrology` will be documented in this file.
+Son güncelleme: 12.09.2018
+....
 
-## Version v0.9.2
-- Kurulum Bilgileri ReadMe.md dosyasına eklendi.
-- MyNet Kaynağı Eklendi. (#TR)
-- BurcunNet Kaynağı Eklendi. (#TR)
-- İstenmeyen kelimelerin bulunduğu satırları silebilmek için ***deleteAllLineIfInvalidWords() fonksiyonu Resources Sınıfına*** eklendi.
-
-## Version v0.9.1
-- Repo Github'a eklendi.
+## Version v0.9.3
+- Kütüphane php için düzenlendi ve ilk versiyonu çıkartıldı.
+- TR(2), EN(1) kaynak eklendi.
+- Wiki sayfası düzenlenmeye başlandı.
