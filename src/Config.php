@@ -11,17 +11,17 @@ class Config
      */
     protected static $resources = [
 
-        "TR" => [
-            "resource_1" => [
-                "model" => "Hurriyet",
-                "url" => "https://www.mynet.com/kadin/burclar-astroloji/"
+        'TR' => [
+            'resource_1' => [
+                'model' => 'Hurriyet',
+                'url' => 'https://www.mynet.com/kadin/burclar-astroloji/'
             ]
         ],
 
-        "EN" => [
-            "resource_1" => [
-                "model" => "HoroscopeApiCom",
-                "url"   => "http://horoscope-api.herokuapp.com/horoscope/today"
+        'EN' => [
+            'resource_1' => [
+                'model' => 'HoroscopeApiCom',
+                'url'   => 'http://horoscope-api.herokuapp.com/horoscope/today'
             ],
 
         ]
@@ -32,7 +32,7 @@ class Config
      * @var array
      */
     protected static $languages = [
-        "TR", "EN"
+        'TR', 'EN'
     ];
 
     /**
@@ -41,7 +41,7 @@ class Config
      * @param string $language
      * @return array
      */
-    public static function getSupportedLanguages($language = "TR")
+    public static function getSupportedLanguages($language = 'TR')
     {
         return self::$languages;
     }
@@ -52,7 +52,7 @@ class Config
      * @param string $language
      * @return mixed
      */
-    public static function getSupportedResources($language = "TR")
+    public static function getSupportedResources($language = 'TR')
     {
         return self::$resources[$language];
     }
@@ -63,9 +63,9 @@ class Config
      * @param string $language
      * @return array
      */
-    public static function getSupportedHoroscopes($language = "TR")
+    public static function getSupportedHoroscopes($language = 'TR')
     {
-        return ["koc", "boga", "ikizler", "yengec", "aslan", "basak", "terazi", "akrep", "yay", "oglak", "kova", "balik"];
+        return ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
     }
 
 }

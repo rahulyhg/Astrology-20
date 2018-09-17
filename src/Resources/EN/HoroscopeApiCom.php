@@ -97,7 +97,7 @@ class HoroscopeApiCom extends Resources
         $slug = sprintf("%s/%s/%s",
             self::BASE_URL,
             $this->type,
-            $this->helper->horoscopeConverterToEnglish($this->horoscope)
+            $this->horoscope
         );
 
         // stump general response

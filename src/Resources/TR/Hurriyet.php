@@ -71,7 +71,6 @@ class Hurriyet extends Resources
 
     /**
      * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getResponse()
     {
@@ -114,7 +113,7 @@ class Hurriyet extends Resources
         //basak-burcu-gunluk-yorum
         $slug = sprintf("%s/%s-burcu-%s-yorum",
             self::BASE_URL,
-            $this->horoscope,
+            $this->horoscopeConverterToTurkish($this->horoscope),
             $this->type
         );
 
@@ -143,6 +142,57 @@ class Hurriyet extends Resources
                 break;
             default:
                 return "gunluk";
+        }
+    }
+
+    /**
+     * Convert to turkish - english
+     *
+     * @param $horoscope
+     * @return string
+     */
+    private function horoscopeConverterToTurkish($horoscope)
+    {
+        switch ($horoscope) {
+            case "aries":
+                return "koc";
+                break;
+            case "taurus":
+                return "boga";
+                break;
+            case "gemini":
+                return "ikizler";
+                break;
+            case "cancer":
+                return "yengec";
+                break;
+            case "leo":
+                return "aslan";
+                break;
+            case "virgo":
+                return "basak";
+                break;
+            case "libra":
+                return "terazi";
+                break;
+            case "scorpio":
+                return "akrep";
+                break;
+            case "sagittarius":
+                return "yay";
+                break;
+            case "capricorn":
+                return "oglak";
+                break;
+            case "aquarius":
+                return "kova";
+                break;
+            case "pisces":
+                return "balik";
+                break;
+            default:
+                return "virgo";
+                break;
         }
     }
 }
