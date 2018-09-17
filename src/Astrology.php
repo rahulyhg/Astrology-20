@@ -39,12 +39,14 @@ class Astrology
     /**
      * @param null $horoscope
      * @param string $resources
-     * @param null $date
+     * @param null $type
      * @param string $language
      * @return Astrology
-     * @throws InvalidDateException|NotSupportedHoroscopeException|NotSupportedLanguageException|NotFoundResourceException
+     * @throws NotFoundResourceException
+     * @throws NotSupportedHoroscopeException
+     * @throws NotSupportedLanguageException
      */
-    public function dailyFetch($horoscope = null, $resources = "resource_1", $date = null, $language = "TR")
+    public function dailyFetch($horoscope = null, $resources = "resource_1", $type = null, $language = "TR")
     {
         if (!in_array(strtolower($horoscope),Config::getSupportedHoroscopes($language)))
         {
@@ -61,16 +63,16 @@ class Astrology
             throw new NotSupportedLanguageException("Bu dil desteklenmiyor.");
         }
 
-        if (isset($date) && !$this->helper->validateDate($date))
+        /*if (isset($date) && !$this->helper->validateDate($date))
         {
             throw new InvalidDateException("Geçersiz tarih formatı.");
-        }
+        }*/
 
         $resource = Config::getSupportedResources($language)[$resources];
 
         $className = self::__RESOURCE_NAMESPACE__."\\".$language."\\".$resource["model"];
 
-        $s = new $className($horoscope, $date, $language);
+        $s = new $className($horoscope, $type, $language);
 
         $this->response = $s->getResponse();
 

@@ -11,7 +11,7 @@ namespace ismailcaakir\Astrology\Resources\TR;
 use Carbon\Carbon;
 use ismailcaakir\Astrology\Resources\Resources;
 
-class Mynet extends Resources
+class Hurriyet extends Resources
 {
     /**
      * @var
@@ -21,7 +21,7 @@ class Mynet extends Resources
     /**
      *
      */
-    const BASE_URL = "https://www.mynet.com/kadin/burclar-astroloji";
+    const BASE_URL = "http://mahmure.hurriyet.com.tr/astroloji/burclar";
 
     /**
      *
@@ -40,9 +40,9 @@ class Mynet extends Resources
     private $horoscope;
 
     /**
-     * @var Carbon
+     * @var
      */
-    private $date;
+    private $type;
 
     /**
      * @var
@@ -53,31 +53,30 @@ class Mynet extends Resources
      * @var array
      */
     public $invalidWords = [
-        "https", "iremSU", "Not", "Mynet", "mynet", "instagram", "twitter", "Twitter", "Instagram", "İnstagram"
+        "https", "http"
     ];
 
     /**
      * BurcunNet constructor.
      * @param $horoscope
-     * @param $date
+     * @param $type
      * @param $language
      */
-    public function __construct($horoscope, $date, $language)
+    public function __construct($horoscope, $type, $language)
     {
-        $this->init();
-
         $this->horoscope    = $horoscope;
-
-        $this->date         = Carbon::parse($date);
-
+        $this->type         = $this->typeConverter($type);
         $this->language     = $language;
     }
 
     /**
      * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getResponse()
     {
+        $this->init();
+
         $this->fetch();
 
         return $this->response;
@@ -90,15 +89,16 @@ class Mynet extends Resources
     {
         $data = $this->goutteClient->request(self::METHOD,$this->horoscopeResourceLinkGenerate());
 
-        $parse = $data->filter('.detail-content-inner > p');
+        $parse = $data->filter('.horoscope-card-text > p');
 
-        $this->response["daily"] = "";
+        $this->response["comment"] = "";
 
         foreach ($parse as $key => $item)
         {
+
             if (!$this->deleteAllLineIfInvalidWords($this->invalidWords,$item->nodeValue))
             {
-                $this->response["daily"] .= $item->nodeValue;
+                $this->response["comment"] .= $item->nodeValue. " ";
             }
         }
 
@@ -107,26 +107,42 @@ class Mynet extends Resources
 
 
     /**
-     * @return \Illuminate\Config\Repository|mixed
+     * @return object
      */
     private function horoscopeResourceLinkGenerate()
     {
-        $slug = sprintf("%s/%s-burcu-gunluk-yorumu.html?day=%s&month=%s&year=%s",
+        //basak-burcu-gunluk-yorum
+        $slug = sprintf("%s/%s-burcu-%s-yorum",
             self::BASE_URL,
             $this->horoscope,
-            $this->helper->replaceWithStartZero($this->date->format('d')),
-            $this->helper->replaceWithStartZero($this->date->format('m')),
-            $this->helper->replaceWithStartZero($this->date->format('Y'))
+            $this->type
         );
 
         // stump general response
         $this->response["resource_link"] = $slug;
-        $this->response["date"]          = $this->date;
+        $this->response["date"]          = Carbon::today();
         $this->response["language"]      = self::LANGUAGE;
 
         return $slug;
     }
 
-
-
+    private function typeConverter($type = null)
+    {
+        switch ($type){
+            case "daily":
+                return "gunluk";
+                break;
+            case "weekly":
+                return "haftalik";
+                break;
+            case "monthly":
+                return "aylik";
+                break;
+            case "yearly":
+                return "yillik";
+                break;
+            default:
+                return "gunluk";
+        }
+    }
 }

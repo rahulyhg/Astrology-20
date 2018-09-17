@@ -21,7 +21,7 @@ class HoroscopeApiCom extends Resources
     /**
      *
      */
-    const BASE_URL = "http://horoscope-api.herokuapp.com/horoscope/today";
+    const BASE_URL = "http://horoscope-api.herokuapp.com/horoscope";
 
     /**
      *
@@ -38,19 +38,27 @@ class HoroscopeApiCom extends Resources
      * @var
      */
     private $horoscope;
-    private $date;
+
+    /**
+     * @var
+     */
+    private $type;
+
+    /**
+     * @var
+     */
     private $language;
 
     /**
      * BurcunNet constructor.
      * @param $horoscope
-     * @param $date
+     * @param $type
      * @param $language
      */
-    public function __construct($horoscope, $date, $language)
+    public function __construct($horoscope, $type, $language)
     {
         $this->horoscope    = $horoscope;
-        $this->date         = $date;
+        $this->type         = $this->typeConverter($type);
         $this->language     = $language;
     }
 
@@ -75,7 +83,7 @@ class HoroscopeApiCom extends Resources
     {
         $data = json_decode($this->guzzleClient->request(self::METHOD,$this->horoscopeResourceLinkGenerate())->getBody()->getContents());
 
-        $this->response["daily"] = $data->horoscope;
+        $this->response["comment"] = $data->horoscope;
 
         return $this;
     }
@@ -86,8 +94,9 @@ class HoroscopeApiCom extends Resources
      */
     private function horoscopeResourceLinkGenerate()
     {
-        $slug = sprintf("%s/%s",
+        $slug = sprintf("%s/%s/%s",
             self::BASE_URL,
+            $this->type,
             $this->helper->horoscopeConverterToEnglish($this->horoscope)
         );
 
@@ -97,5 +106,25 @@ class HoroscopeApiCom extends Resources
         $this->response["language"]      = self::LANGUAGE;
 
         return $slug;
+    }
+
+    private function typeConverter($type = null)
+    {
+        switch ($type){
+            case "daily":
+                return "today";
+                break;
+            case "weekly":
+                return "week";
+                break;
+            case "monthly":
+                return "month";
+                break;
+            case "yearly":
+                return "year";
+                break;
+            default:
+                return "today";
+        }
     }
 }

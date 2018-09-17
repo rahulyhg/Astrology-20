@@ -12,16 +12,10 @@ class Config
     protected static $resources = [
 
         "TR" => [
-
             "resource_1" => [
-                "model" => "Mynet",
+                "model" => "Hurriyet",
                 "url" => "https://www.mynet.com/kadin/burclar-astroloji/"
-            ],
-
-            "resource_2" => [
-                "model" => "BurcunNet",
-                "url" => "http://burcun.net"
-            ],
+            ]
         ],
 
         "EN" => [
