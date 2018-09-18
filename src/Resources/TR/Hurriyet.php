@@ -113,7 +113,7 @@ class Hurriyet extends Resources
         //basak-burcu-gunluk-yorum
         $slug = sprintf("%s/%s-burcu-%s-yorum",
             self::BASE_URL,
-            $this->horoscopeConverterToTurkish($this->horoscope),
+            $this->translateHoroscope($this->horoscope),
             $this->type
         );
 
@@ -125,6 +125,10 @@ class Hurriyet extends Resources
         return $slug;
     }
 
+    /**
+     * @param null $type
+     * @return string
+     */
     private function typeConverter($type = null)
     {
         switch ($type){
@@ -151,7 +155,7 @@ class Hurriyet extends Resources
      * @param $horoscope
      * @return string
      */
-    private function horoscopeConverterToTurkish($horoscope)
+    private function translateHoroscope($horoscope)
     {
         switch ($horoscope) {
             case "aries":

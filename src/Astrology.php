@@ -46,7 +46,7 @@ class Astrology
      * @throws NotSupportedHoroscopeException
      * @throws NotSupportedLanguageException
      */
-    public function dailyFetch($horoscope = null, $resources = "resource_1", $type = null, $language = "TR")
+    public function fetch($horoscope = null, $resources = "resource_1", $type = null, $language = "TR")
     {
         if (!in_array(strtolower($horoscope),Config::getSupportedHoroscopes($language)))
         {

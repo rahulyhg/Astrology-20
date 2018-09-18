@@ -108,6 +108,10 @@ class HoroscopeApiCom extends Resources
         return $slug;
     }
 
+    /**
+     * @param null $type
+     * @return string
+     */
     private function typeConverter($type = null)
     {
         switch ($type){
