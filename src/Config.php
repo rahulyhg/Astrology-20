@@ -24,6 +24,14 @@ class Config
                 'url'   => 'http://horoscope-api.herokuapp.com/horoscope/today'
             ],
 
+        ],
+
+        'FR' => [
+            'resource_1' => [
+                'model' => 'Sympatico',
+                'url'   => 'http://www.sympatico.ca/horoscope/traditionnel'
+            ],
+
         ]
     ];
 
@@ -32,7 +40,7 @@ class Config
      * @var array
      */
     protected static $languages = [
-        'TR', 'EN'
+        'TR', 'EN', 'FR'
     ];
 
     /**
