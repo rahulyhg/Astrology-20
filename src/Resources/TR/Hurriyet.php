@@ -97,6 +97,11 @@ class Hurriyet extends Resources
 
             if (!$this->deleteAllLineIfInvalidWords($this->invalidWords,$item->nodeValue))
             {
+                if (isset($item->firstChild->tagName) && ($item->firstChild->tagName === "strong"))
+                {
+                    continue;
+                }
+
                 $this->response["comment"] .= $item->nodeValue. " ";
             }
         }
